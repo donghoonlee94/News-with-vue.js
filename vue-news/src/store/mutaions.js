@@ -8,4 +8,10 @@ export default {
   SET_ASK(state, ask) {
     state.ask = ask;
   },  
+  SET_USER(state, username) {
+    state.user = username;
+  },
+  SET_ITEM(state, item) {
+    state.item = item;
+  }
 }
