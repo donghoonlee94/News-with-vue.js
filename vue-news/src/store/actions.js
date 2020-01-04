@@ -1,4 +1,4 @@
-import { fetchNewsList, fetchAskList, fetchJobsList, fetchUserInfo, fetchItemList } from '../api';
+import { fetchNewsList, fetchAskList, fetchJobsList, fetchUserInfo, fetchCommentItem } from '../api';
 
 export default {
   // context = store의 메소드와 속성을 가지고 있어서 commit, state,mutations 으로 접근이 가능함.
@@ -39,8 +39,8 @@ export default {
         console.log(error);
       });
   },
-  FETCH_ITEM({commit}, item) {
-    fetchItemList(item)
+  FETCH_ITEM({commit}, id) {
+    fetchCommentItem(id)
       .then(({data}) => {
         commit('SET_ITEM', data)
       })

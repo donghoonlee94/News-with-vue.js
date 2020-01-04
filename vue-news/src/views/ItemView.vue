@@ -1,6 +1,6 @@
 <template>
   <div>
-    {{userItem.comments.content}}
+    {{userItem.content}}
   </div>
 </template>
 
@@ -12,7 +12,7 @@ export default {
     },
   },
   created() {
-    const itemList = this.$route.params.item;
+    const itemList = this.$route.params.id;
     this.$store.dispatch('FETCH_ITEM', itemList)
   }
 }
