@@ -1,31 +1,15 @@
 <template>
   <div >
-    <p v-for="item in this.$store.state.news" :key="item.id">
-      <a :href="item.url">
-        {{item.title}}
-      </a>
-      <small>
-        {{item.time_ago}} by 
-        <router-link :to="`/user/${item.user}`">{{item.user}}</router-link>
-      </small>      
-    </p>
+    <ListItem></ListItem>
   </div>
 </template>
 
 <script>
+import ListItem from "../components/ListItem.vue";
 
 export default {
-  created() {
-    // 원래 비동기 함수 내에서 this를 사용하기 위해서는 vm = this를 만들고 vm.users로 접근했으나, 화살표 함수에서 this는 상위를 보기 때문에 아래처럼 가능하다.
-    // fetchNewsList()
-    //   .then(response => this.users = response.data)
-    //   .catch(error => console.log(error));
-
-    this.$store.dispatch('FETCH_NEWS');
-  },
+  components: {
+    ListItem,
+  }
 }
 </script>
-
-<style>
-
-</style>
