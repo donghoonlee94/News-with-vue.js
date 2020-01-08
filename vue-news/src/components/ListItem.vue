@@ -39,32 +39,33 @@
 
 <script>
 export default {
-  created() {
+  // created() {
     // 원래 비동기 함수 내에서 this를 사용하기 위해서는 vm = this를 만들고 vm.users로 접근했으나, 화살표 함수에서 this는 상위를 보기 때문에 아래처럼 가능하다.
     // fetchNewsList()
     //   .then(response => this.users = response.data)
     //   .catch(error => console.log(error));
 
-    const name = this.$route.name;
-    if( name === 'news') {
-      this.$store.dispatch('FETCH_NEWS');      
-    }else if( name === 'ask' ) {
-      this.$store.dispatch('FETCH_ASK');
-    }else if( name === 'jobs' ) {
-      this.$store.dispatch('FETCH_JOBS');
-    }
-  },
+    // const name = this.$route.name;
+    // if( name === 'news') {
+    //   this.$store.dispatch('FETCH_NEWS');      
+    // }else if( name === 'ask' ) {
+    //   this.$store.dispatch('FETCH_ASK');
+    // }else if( name === 'jobs' ) {
+    //   this.$store.dispatch('FETCH_JOBS');
+    // }
+  // },
   computed: {
     listItems() {
-      const name = this.$route.name;
-      if( name === 'news') {
-        return this.$store.state.news;
-      }else if( name === 'ask' ) {
-        return this.$store.state.ask;
-      }else if( name === 'jobs' ) {
-        return this.$store.state.jobs;
-      }
-      return console.log('dont load listitems');
+      // const name = this.$route.name;
+      // if( name === 'news') {
+      //   return this.$store.state.news;
+      // }else if( name === 'ask' ) {
+      //   return this.$store.state.ask;
+      // }else if( name === 'jobs' ) {
+      //   return this.$store.state.jobs;
+      // }
+      // return console.log('dont load listitems');
+      return this.$store.state.list
     },
   },
 }
